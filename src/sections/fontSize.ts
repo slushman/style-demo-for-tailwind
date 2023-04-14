@@ -4,7 +4,6 @@ export const fontSize = {
   meta: 'Based on browser default font-size of 16px',
   sections: [
     {
-      sectionTitle: 'Font Size',
       data: [
         { className: 'text-[0.67rem]', note: 'default h6 size in most browsers' },
         { className: 'text-xs', note: '0.75rem<' },

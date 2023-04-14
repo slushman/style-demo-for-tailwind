@@ -1,18 +1,27 @@
 ---
 import type { MenuOption, MenuOptions } from '../types';
 
+type MenuStyles = {
+  li?: string;
+  nav?: string;
+  p?: string;
+  ul?: string;
+};
+
 interface Menu {
+  label?: string;
   menuOptions: MenuOptions;
+  styles: MenuStyles;
 }
 
-const { menuOptions } = Astro.props;
+const { label = 'Contents', menuOptions, styles } = Astro.props;
 ---
-<nav class="mb-8">
-  <p class="">Contents</p>
-  <ul class="flex flex-wrap">
+<nav class={`mb-8 ${styles?.nav}`}>
+  <p class={styles?.p}>{label}</p>
+  <ul class={`flex flex-wrap ${styles?.ul}`}>
     {menuOptions.map(({ id, label }: MenuOption) => (
-      <li class="">
-        <a class="block p-4" href={`#${id}`}>{label}</a>
+      <li class={styles?.li}>
+        <a class="block px-4 py-2" href={`#${id}`}>{label}</a>
       </li>
     ))}
   </ul>

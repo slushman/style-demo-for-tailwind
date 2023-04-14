@@ -8,8 +8,13 @@ import { borderRadius } from '../sections/borderRadius';
 import { borderStyle } from '../sections/borderStyle';
 import { borderWidth } from '../sections/borderWidth';
 import { fontSize } from '../sections/fontSize';
+import { fontWeight } from '../sections/fontWeight';
 import { margin } from '../sections/margin';
+import { outlineOffset } from '../sections/outlineOffset';
+import { outlineStyle } from '../sections/outlineStyle';
+import { outlineWidth } from '../sections/outlineWidth';
 import { padding } from '../sections/padding';
+import { textTransform } from '../sections/textTransform';
 
 import type { DemoData, Section, SectionData, Styles } from '../types';
 
@@ -18,8 +23,13 @@ const demos = [
   borderStyle,
   borderWidth,
   fontSize,
+  fontWeight,
   margin,
+  outlineOffset,
+  outlineStyle,
+  outlineWidth,
   padding,
+  textTransform,
 ];
 const menuOptions = demos.map(({ id, label }) => ({
   id,
@@ -28,19 +38,10 @@ const menuOptions = demos.map(({ id, label }) => ({
 ---
 
 <Layout title="Tailwind Demo Site">
+  <Menu label="Menu" menuOptions={menuOptions} styles={{ nav: 'fixed', p: 'p-4 font-bold', ul: 'flex-col' }} />
 	<main>
 		<h1>Styles Demo for Tailwind</h1>
 		<p class="mb-8">Below are some commonly-used style classes in Tailwind and what they look like when rendered.</p>
-    <Menu menuOptions={menuOptions} />
-    {demos.map((demo) => (
-      <DemoSections data={demo} />
-    ))}
-    {demos.map((demo) => (
-      <DemoSections data={demo} />
-    ))}
-    {demos.map((demo) => (
-      <DemoSections data={demo} />
-    ))}
     {demos.map((demo) => (
       <DemoSections data={demo} />
     ))}
