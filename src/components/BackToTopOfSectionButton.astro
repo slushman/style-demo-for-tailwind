@@ -1,0 +1,8 @@
+---
+interface BackToTopOfSectionButton {
+  id: string;
+}
+
+const { id } = Astro.props;
+---
+<a class="" href={`#${id}`}>Back to top of section</a>

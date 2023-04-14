@@ -1,0 +1,55 @@
+---
+import Accordion from '../components/Accordion.astro';
+import BackToTopOfSectionButton from '../components/BackToTopOfSectionButton.astro';
+
+type Styles = {
+  li?: string;
+  p?: string;
+  span?: string;
+};
+
+type SectionData = {
+  className: string;
+  note?: string;
+};
+
+type Section = {
+  sectionTitle?: string;
+  data: SectionData[];
+};
+
+type DemoData = {
+  id: string;
+  label: string;
+  meta?: string;
+  sections: Section[];
+  styles?: Styles;
+};
+
+interface DemoSection {
+  data: DemoData;
+}
+
+const { data } = Astro.props;
+const { id, label, meta, sections, styles } = data;
+---
+<Accordion label={label}>
+  <section class="accordion" id={id}>
+    <p class="mb-8">{meta}</p>
+    {sections.map(({ sectionTitle, data }: Section, index: number) => (
+      <div>
+        {sectionTitle && (<div class="flex justify-between py-4"><h3>{sectionTitle}</h3>{index > 0 && (<BackToTopOfSectionButton id={id} />)}</div>)}
+        <ul class="mb-8">
+          {data.map(({ className, note = '' }: SectionData) => (
+            <li class={`mb-4 ${className} ${styles?.li}`}>
+              <p class={`p-2 ${styles?.p}`}>
+                <span class={styles?.span}>{`${className}`}{note && (`, ${note}`)}</span>
+              </p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </section>
+</Accordion>
+

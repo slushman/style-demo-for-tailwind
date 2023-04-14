@@ -1,22 +1,26 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-import BorderRadius from '../sections/BorderRadius.astro';
-import BorderStyle from '../sections/BorderStyle.astro';
-import BorderWidth from '../sections/BorderWidth.astro';
-import FontSize from '../sections/FontSize.astro';
-import Padding from '../sections/Padding.astro';
+import DemoSection from '../components/DemoSection.astro';
+
+import { borderRadius } from '../sections/borderRadius';
+import { borderStyle } from '../sections/borderStyle';
+import { borderWidth } from '../sections/borderWidth';
+import { fontSize } from '../sections/fontSize';
+import { margin } from '../sections/margin';
+import { padding } from '../sections/padding';
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Tailwind Demo Site">
 	<main>
 		<h1>Styles Demo for Tailwind</h1>
 		<p class="mb-8">Below are some commonly-used style classes in Tailwind and what they look like when rendered.</p>
-    <BorderRadius />
-    <BorderStyle />
-    <BorderWidth />
-    <FontSize />
-    <Padding />
+    <DemoSection data={borderRadius} />
+    <DemoSection data={borderStyle} />
+    <DemoSection data={borderWidth} />
+    <DemoSection data={fontSize} />
+    <DemoSection data={margin} />
+    <DemoSection data={padding} />
 	</main>
 </Layout>
 
