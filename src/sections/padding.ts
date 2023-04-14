@@ -8,6 +8,7 @@ export const padding = {
   },
   sections: [
     {
+      sectionId: 'paddingAllSides',
       sectionTitle: 'Padding on all sides',
       data: [
         { className: 'p-0', note: '0px', },
@@ -48,6 +49,7 @@ export const padding = {
       ],
     },
     {
+      sectionId: 'paddingTopSide',
       sectionTitle: 'Padding on top side',
       data: [
         { className: 'pt-0', note: '0px', },
@@ -88,6 +90,7 @@ export const padding = {
       ],
     },
     {
+      sectionId: 'paddingBottomSide',
       sectionTitle: 'Padding on bottom side',
       data: [
         { className: 'pb-0', note: '0px', },
@@ -128,6 +131,7 @@ export const padding = {
       ],
     },
     {
+      sectionId: 'paddingLeftSide',
       sectionTitle: 'Padding on left side',
       data: [
         { className: 'pl-0', note: '0px', },
@@ -168,6 +172,7 @@ export const padding = {
       ],
     },
     {
+      sectionId: 'paddingRightSide',
       sectionTitle: 'Padding on right side',
       data: [
         { className: 'pr-0', note: '0px', },
@@ -208,6 +213,7 @@ export const padding = {
       ],
     },
     {
+      sectionId: 'paddingLeftAndRightSides',
       sectionTitle: 'Padding on left and right sides',
       data: [
         { className: 'px-0', note: '0px', },
@@ -248,6 +254,7 @@ export const padding = {
       ],
     },
     {
+      sectionId: 'paddingTopAndBottomSides',
       sectionTitle: 'Padding on top and bottom sides',
       data: [
         { className: 'py-0', note: '0px', },

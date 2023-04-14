@@ -1,55 +1,28 @@
 ---
-import Accordion from '../components/Accordion.astro';
-import BackToTopOfSectionButton from '../components/BackToTopOfSectionButton.astro';
+import BackToTopOfSectionButton from './BackToTopOfSectionButton.astro';
 
-type Styles = {
-  li?: string;
-  p?: string;
-  span?: string;
-};
-
-type SectionData = {
-  className: string;
-  note?: string;
-};
-
-type Section = {
-  sectionTitle?: string;
-  data: SectionData[];
-};
-
-type DemoData = {
-  id: string;
-  label: string;
-  meta?: string;
-  sections: Section[];
-  styles?: Styles;
-};
+import type { DemoData, Section, SectionData, Styles } from '../types';
 
 interface DemoSection {
-  data: DemoData;
+  id: string;
+  index: number;
+  sectionId?: string;
+  sectionTitle?: string;
+  styles: Styles;
+  data: SectionData[];
 }
 
-const { data } = Astro.props;
-const { id, label, meta, sections, styles } = data;
+const { id, index, sectionId, sectionTitle, styles, data } = Astro.props;
 ---
-<Accordion label={label}>
-  <section class="accordion" id={id}>
-    <p class="mb-8">{meta}</p>
-    {sections.map(({ sectionTitle, data }: Section, index: number) => (
-      <div>
-        {sectionTitle && (<div class="flex justify-between py-4"><h3>{sectionTitle}</h3>{index > 0 && (<BackToTopOfSectionButton id={id} />)}</div>)}
-        <ul class="mb-8">
-          {data.map(({ className, note = '' }: SectionData) => (
-            <li class={`mb-4 ${className} ${styles?.li}`}>
-              <p class={`p-2 ${styles?.p}`}>
-                <span class={styles?.span}>{`${className}`}{note && (`, ${note}`)}</span>
-              </p>
-            </li>
-          ))}
-        </ul>
-      </div>
+<div id={sectionId}>
+  {sectionTitle && (<div class="flex justify-between py-4"><h3>{sectionTitle}</h3>{index > 0 && (<BackToTopOfSectionButton id={id} />)}</div>)}
+  <ul class="mb-8">
+    {data.map(({ className, note = '' }: SectionData) => (
+      <li class={`mb-4 ${className} ${styles?.li}`}>
+        <p class={`p-2 ${styles?.p}`}>
+          <span class={styles?.span}>{`${className}`}{note && (`, ${note}`)}</span>
+        </p>
+      </li>
     ))}
-  </section>
-</Accordion>
-
+  </ul>
+</div>

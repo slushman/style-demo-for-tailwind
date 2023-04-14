@@ -7,6 +7,7 @@ export const borderWidth = {
   },
   sections: [
     {
+      sectionId: 'borderAllSides',
       sectionTitle: 'Border on all sides',
       data: [
         { className: 'border-0', note: '0px' },
@@ -17,6 +18,7 @@ export const borderWidth = {
       ],
     },
     {
+      sectionId: 'borderLeftAndRightSides',
       sectionTitle: 'Border on left and right',
       data: [
         { className: 'border-x-0', note: '0px' },
@@ -27,6 +29,7 @@ export const borderWidth = {
       ],
     },
     {
+      sectionId: 'borderTopAndBottomSides',
       sectionTitle: 'Border on top and bottom',
       data: [
         { className: 'border-y-0', note: '0px' },
@@ -37,6 +40,7 @@ export const borderWidth = {
       ],
     },
     {
+      sectionId: 'borderTopSide',
       sectionTitle: 'Border on top',
       data: [
         { className: 'border-t-0', note: '0px' },
@@ -47,6 +51,7 @@ export const borderWidth = {
       ],
     },
     {
+      sectionId: 'borderRightSide',
       sectionTitle: 'Border on right',
       data: [
         { className: 'border-r-0', note: '0px' },
@@ -57,6 +62,7 @@ export const borderWidth = {
       ],
     },
     {
+      sectionId: 'borderBottomSide',
       sectionTitle: 'Border on bottom',
       data: [
         { className: 'border-b-0', note: '0px' },
@@ -67,6 +73,7 @@ export const borderWidth = {
       ],
     },
     {
+      sectionId: 'borderLeftSide',
       sectionTitle: 'Border on left',
       data: [
         { className: 'border-l-0', note: '0px' },

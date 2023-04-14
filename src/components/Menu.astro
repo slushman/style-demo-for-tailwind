@@ -1,0 +1,19 @@
+---
+import type { MenuOption, MenuOptions } from '../types';
+
+interface Menu {
+  menuOptions: MenuOptions;
+}
+
+const { menuOptions } = Astro.props;
+---
+<nav class="mb-8">
+  <p class="">Contents</p>
+  <ul class="flex flex-wrap">
+    {menuOptions.map(({ id, label }: MenuOption) => (
+      <li class="">
+        <a class="block p-4" href={`#${id}`}>{label}</a>
+      </li>
+    ))}
+  </ul>
+</nav>

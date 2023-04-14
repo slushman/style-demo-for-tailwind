@@ -7,6 +7,7 @@ export const borderRadius = {
   },
   sections: [
     {
+      sectionId: 'borderAllSides',
       sectionTitle: 'Border on all sides',
       data: [
         { className: 'rounded-none', note: '0px' },
@@ -21,6 +22,7 @@ export const borderRadius = {
       ],
     },
     {
+      sectionId: 'borderTopLeftAndRight',
       sectionTitle: 'Border on top left and top right',
       data: [
         { className: 'rounded-t-none', note: '0px' },
@@ -35,6 +37,7 @@ export const borderRadius = {
       ],
     },
     {
+      sectionId: 'borderRightSide',
       sectionTitle: 'Border on right side',
       data: [
         { className: 'rounded-r-none', note: '0px' },
@@ -49,6 +52,7 @@ export const borderRadius = {
       ],
     },
     {
+      sectionId: 'borderBottomRightAndLeft',
       sectionTitle: 'Border on bottom right and left sides',
       data: [
         { className: 'rounded-b-none', note: '0px' },
@@ -63,6 +67,7 @@ export const borderRadius = {
       ],
     },
     {
+      sectionId: 'borderLeftSide',
       sectionTitle: 'Border on left side',
       data: [
         { className: 'rounded-l-none', note: '0px' },
@@ -77,6 +82,7 @@ export const borderRadius = {
       ],
     },
     {
+      sectionId: 'borderTopLeft',
       sectionTitle: 'Border on top left corner',
       data: [
         { className: 'rounded-tl-none', note: '0px' },
@@ -91,6 +97,7 @@ export const borderRadius = {
       ],
     },
     {
+      sectionId: 'borderTopRight',
       sectionTitle: 'Border on top right corner',
       data: [
         { className: 'rounded-tr-none', note: '0px' },
@@ -105,6 +112,7 @@ export const borderRadius = {
       ],
     },
     {
+      sectionId: 'borderBottomLeft',
       sectionTitle: 'Border on bottom left corner',
       data: [
         { className: 'rounded-bl-none', note: '0px' },
@@ -119,6 +127,7 @@ export const borderRadius = {
       ],
     },
     {
+      sectionId: 'borderBottomRight',
       sectionTitle: 'Border on bottom right corner',
       data: [
         { className: 'rounded-br-none', note: '0px' },

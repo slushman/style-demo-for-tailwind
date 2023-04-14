@@ -8,6 +8,7 @@ export const margin = {
   },
   sections: [
     {
+      sectionId: 'marginAllSides',
       sectionTitle: 'Margin on all sides',
       data: [
         { className: 'm-0', note: '0px', },
@@ -48,6 +49,7 @@ export const margin = {
       ],
     },
     {
+      sectionId: 'marginTopSide',
       sectionTitle: 'Margin on top side',
       data: [
         { className: 'mt-0', note: '0px', },
@@ -88,6 +90,7 @@ export const margin = {
       ],
     },
     {
+      sectionId: 'marginBottomSide',
       sectionTitle: 'Margin on bottom side',
       data: [
         { className: 'mb-0', note: '0px', },
@@ -128,6 +131,7 @@ export const margin = {
       ],
     },
     {
+      sectionId: 'marginLeftSide',
       sectionTitle: 'Margin on left side',
       data: [
         { className: 'ml-0', note: '0px', },
@@ -168,6 +172,7 @@ export const margin = {
       ],
     },
     {
+      sectionId: 'marginRightSide',
       sectionTitle: 'Margin on right side',
       data: [
         { className: 'mr-0', note: '0px', },
@@ -208,6 +213,7 @@ export const margin = {
       ],
     },
     {
+      sectionId: 'marginLeftAndRightSides',
       sectionTitle: 'Margin on left and right sides',
       data: [
         { className: 'mx-0', note: '0px', },
@@ -248,6 +254,7 @@ export const margin = {
       ],
     },
     {
+      sectionId: 'marginTopAndBottomSides',
       sectionTitle: 'Margin on top and bottom sides',
       data: [
         { className: 'my-0', note: '0px', },
@@ -289,13 +296,3 @@ export const margin = {
     },
   ],
 };
-
-// <p class="mb-8">The text inside each element has a green background color to help show the amount of margin.</p>
-// <h3 id="margin">Margin on all sides</h3>
-// <ul class="mb-8">
-//   {allSizes.map(({ selector, label }) => (
-//     <li class="mb-4 border-2 border-solid">
-//       <p class={`${selector}`}><span class="bg-lime-600">{`${selector}, ${label}`}</span></p>
-//     </li>
-//   ))}
-// </ul>

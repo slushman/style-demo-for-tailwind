@@ -1,0 +1,34 @@
+---
+import Accordion from './Accordion.astro';
+import DemoSection from './DemoSection.astro';
+import Menu from './Menu.astro';
+
+import type { DemoData, Section, SectionData } from '../types';
+
+interface DemoSections {
+  data: DemoData;
+}
+
+const { data } = Astro.props;
+const { id, label, meta, sections, styles } = data;
+const menuOptions = sections.map(({ sectionId, sectionTitle }: Section) => ({
+  id: sectionId,
+  label: sectionTitle,
+}));
+---
+<Accordion label={label}>
+  <section class="accordion" id={id}>
+    {meta && (<p class="mb-8">{meta}</p>)}
+    {sections.length > 1 && (<Menu menuOptions={menuOptions} />)}
+    {sections.map((section: Section, index: number) => (
+      <DemoSection
+        id={id}
+        index={index}
+        sectionCount={sections.length}
+        styles={styles}
+        {...section}
+      />
+    ))}
+  </section>
+</Accordion>
+

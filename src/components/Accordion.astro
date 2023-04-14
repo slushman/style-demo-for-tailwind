@@ -1,12 +1,9 @@
 ---
-import { slugify } from '../utils';
-
 interface Accordion {
   label: string;
 }
 
 const { label } = Astro.props;
-const slug = slugify(label);
 ---
 <details class="p-3 border-2 border-white rounded mb-6">
   <summary class="bg-slate-900 cursor-pointer text-2xl">{label}</summary>
