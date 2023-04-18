@@ -15,6 +15,11 @@ export type Section = {
   data: SectionData[];
 };
 
+export enum DemoComponent {
+  Text = 'text',
+  Video = 'video',
+}
+
 export type DemoData = {
   id: string;
   label: string;

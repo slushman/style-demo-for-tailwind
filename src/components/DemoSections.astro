@@ -10,7 +10,7 @@ interface DemoSections {
 }
 
 const { data } = Astro.props;
-const { id, label, meta, sections, styles } = data;
+const { demoComponent, id, label, meta, sections, styles } = data;
 const menuOptions = sections.map(({ sectionId, sectionTitle }: Section) => ({
   id: sectionId,
   label: sectionTitle,
@@ -22,6 +22,7 @@ const menuOptions = sections.map(({ sectionId, sectionTitle }: Section) => ({
     {sections.length > 1 && (<Menu menuOptions={menuOptions} />)}
     {sections.map((section: Section, index: number) => (
       <DemoSection
+        demoComponent={demoComponent}
         id={id}
         index={index}
         sectionCount={sections.length}

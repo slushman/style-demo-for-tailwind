@@ -4,6 +4,7 @@ import Layout from '../layouts/Layout.astro';
 import DemoSections from '../components/DemoSections.astro';
 import Menu from '../components/Menu.astro';
 
+import { aspectRatio } from '../sections/aspectRatio';
 import { borderRadius } from '../sections/borderRadius';
 import { borderStyle } from '../sections/borderStyle';
 import { borderWidth } from '../sections/borderWidth';
@@ -19,6 +20,7 @@ import { textTransform } from '../sections/textTransform';
 import type { DemoData, Section, SectionData, Styles } from '../types';
 
 const demos = [
+  aspectRatio,
   borderRadius,
   borderStyle,
   borderWidth,
@@ -41,7 +43,8 @@ const menuOptions = demos.map(({ id, label }) => ({
   <Menu label="Menu" menuOptions={menuOptions} styles={{ nav: 'fixed', p: 'p-4 font-bold', ul: 'flex-col' }} />
 	<main>
 		<h1>Styles Demo for Tailwind</h1>
-		<p class="mb-8">Below are some commonly-used style classes in Tailwind and what they look like when rendered.</p>
+		<p class="mb-4">Below are some commonly-used style classes in Tailwind and what they look like when rendered.</p>
+    <p class="mb-8"><a href="https://tailwindcss.com/docs/">Tailwind Documentation</a></p>
     {demos.map((demo) => (
       <DemoSections data={demo} />
     ))}

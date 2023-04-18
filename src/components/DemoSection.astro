@@ -1,9 +1,15 @@
 ---
-import BackToTopOfSectionButton from './BackToTopOfSectionButton.astro';
+import { Debug } from 'astro/components';
 
-import type { DemoData, Section, SectionData, Styles } from '../types';
+import BackToTopOfSectionButton from './BackToTopOfSectionButton.astro';
+import DemoText from './DemoText.astro';
+
+import type { SectionData, Styles } from '../types';
+import { DemoComponent } from '../types';
+import DemoVideo from './DemoVideo.astro';
 
 interface DemoSection {
+  demoComponent?: DemoComponent;
   id: string;
   index: number;
   sectionId?: string;
@@ -12,16 +18,17 @@ interface DemoSection {
   data: SectionData[];
 }
 
-const { id, index, sectionId, sectionTitle, styles, data } = Astro.props;
+const { demoComponent = DemoComponent.Text, id, index, sectionId, sectionTitle, styles, data } = Astro.props;
 ---
 <div id={sectionId}>
   {sectionTitle && (<div class="flex justify-between py-4"><h3>{sectionTitle}</h3>{index > 0 && (<BackToTopOfSectionButton id={id} />)}</div>)}
   <ul class="mb-8">
     {data.map(({ className, note = '' }: SectionData) => (
       <li class={`mb-4 ${className} ${styles?.li}`}>
-        <p class={`p-2 ${styles?.p}`}>
-          <span class={styles?.span}>{`${className}`}{note && (`, ${note}`)}</span>
-        </p>
+        {demoComponent === DemoComponent.Video && (
+          <DemoVideo className={className} note={note} styles={styles} />
+        )}
+        {demoComponent === DemoComponent.Text && (<DemoText className={className} note={note} styles={styles} />)}
       </li>
     ))}
   </ul>

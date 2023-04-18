@@ -1,0 +1,9 @@
+---
+const { className, note, styles } = Astro.props;
+---
+<div>
+  <iframe class={`w-full rounded-lg ${className}`} src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
+  <p class={`p-2 ${styles?.p}`}>
+    <span class={styles?.span}>{`${className}`}{note && (`, ${note}`)}</span>
+  </p>
+</div>
